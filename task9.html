@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 9</title>
+</head>
+<body>
+
+
+<textarea id="textarea"></textarea>
+
+<button id="button" type="button">button</button>
+
+
+<div id="images">
+
+</div>
+
+</body>
+
+
+<script>
+    document.getElementById('button').addEventListener('click', function () {
+        const links = document.getElementById('textarea').value.split('\n');
+        links.forEach(function (value) {
+            const img = document.createElement('img');
+            img.src = value;
+
+            document.getElementById('images').appendChild(img);
+        })
+    })
+
+
+</script>
+</html>

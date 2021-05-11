@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1</title>
+    <style>
+
+        .app {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .block {
+            width: 100px;
+            height: 100px;
+            background: black;
+            display: block;
+            margin-left: 10px;
+        }
+
+        .btn {
+            margin-top: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app" class="app">
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+</div>
+
+<button id="cssjs" class="btn">
+    cssjs
+</button>
+
+</body>
+
+<script>
+    document.getElementById('cssjs').onclick = function () {
+        const app = document.getElementById('app');
+
+        for( let i = 0, child; child = app.children[i]; i++) {
+            if (child.className.split(' ').includes('hidden')) {
+                child.classList.remove('hidden');
+            } else {
+                child.classList.add('hidden');
+            }
+        }
+    };
+</script>
+
+
+</html>

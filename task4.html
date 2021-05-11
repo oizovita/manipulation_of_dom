@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 4</title>
+</head>
+<body>
+
+<label>
+    <input id="input" type="text" name="selector">
+
+    <button id="send">
+        send
+    </button>
+</label>
+
+
+<p>p</p>
+<p>p2</p>
+<div>div</div>
+<h1>h1</h1>
+<span>span</span>
+<a>a</a>
+
+</body>
+
+<script>
+
+    document.getElementById('send').addEventListener('click', function () {
+        const elements = document.getElementsByTagName(document.getElementById('input').value)
+        for (let i = 0, element; element = elements[i]; i++) {
+            element.style.visibility = element.style.visibility === 'visible' ? 'hidden' : 'visible'
+        }
+    })
+
+
+</script>
+
+</html>

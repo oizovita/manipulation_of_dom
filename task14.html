@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 14</title>
+</head>
+
+<style>
+    body {
+        height: 10000px;
+    }
+
+    .btn {
+        position: fixed;
+        bottom: 0;
+        display: none;
+    }
+</style>
+
+<body>
+<button id="btn" class="btn">button</button>
+</body>
+
+<script>
+
+
+    btn.onclick = function () {
+        window.scrollTo(pageXOffset, 0);
+        btn.style.display = 'none'
+    };
+
+    window.addEventListener('scroll', function () {
+        if (pageYOffset + innerHeight >= document.documentElement.scrollHeight) {
+            btn.style.display = 'block'
+        }
+
+
+    });
+
+</script>
+
+</html>

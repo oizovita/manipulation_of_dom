@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 13</title>
+</head>
+<body>
+
+<p id="ls" contenteditable="true">
+    local storage
+</p>
+
+
+<p id="ss" contenteditable="true">
+    session storage
+</p>
+
+
+<p id="ck" contenteditable="true">
+    cookies
+</p>
+
+
+<script>
+
+    const ls = document.getElementById('ls')
+    const ss = document.getElementById('ss')
+    const ck = document.getElementById('ck')
+
+    window.addEventListener('beforeunload', function (event) {
+        localStorage.setItem('value', ls.innerHTML);
+        sessionStorage.setItem('value', ss.innerText);
+        document.cookie = "value=" + ck.innerHTML;
+    });
+
+    window.addEventListener("load", function (event) {
+        ls.innerHTML = localStorage.getItem('value');
+        ss.innerHTML = sessionStorage.getItem('value')
+        ck.innerHTML = document.cookie.replace(/(?:(?:^|.*;\s*)value\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+    });
+
+
+</script>
+
+</body>
+</html>

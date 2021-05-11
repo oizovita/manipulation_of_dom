@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 8 </title>
+</head>
+<body>
+
+<label>
+    <input id="link" type="url">
+</label>
+
+<button type="button" id="btn">button</button>
+
+<img style="display: none" id="img" src="" alt="image">
+
+</body>
+
+<script>
+    document.getElementById('btn').addEventListener('click', function () {
+        const img = document.getElementById('img')
+        const link = document.getElementById('link').value
+
+        if (!link) {
+            return;
+        }
+
+        img.src = link;
+        img.style.display = 'block'
+    })
+
+    document.getElementById('img').src = document.getElementById('link').value
+
+</script>
+</html>

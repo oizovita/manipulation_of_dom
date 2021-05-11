@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 15</title>
+
+    <style>
+        .div1 {
+            height: 200px;
+            width: 200px;
+            background: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .div2 {
+            height: 100px;
+            width: 100px;
+            background: yellow;
+        }
+
+
+    </style>
+</head>
+
+
+<body>
+
+<div id="d1" class="div1">
+    <div id="d2" class="div2">
+
+    </div>
+</div>
+
+<script>
+    d1.onclick = function (event) {
+        alert('Test')
+    }
+
+    d2.onclick = function (event) {
+        alert('Test2');
+        event.stopPropagation();
+    }
+</script>
+
+</body>
+</html>

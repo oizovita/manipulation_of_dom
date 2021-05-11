@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3</title>
+    <style>
+        .block {
+            width: 100px;
+            height: 100px;
+            background: black;
+            display: block;
+        }
+
+        .btn {
+            margin-top: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div id="block" class="block"></div>
+</div>
+
+<button id="css" class="btn" onclick="hiddenWithCss()">
+    css
+</button>
+
+<button id="js" class="btn">
+    js
+</button>
+
+<button id="cssjs" class="btn">
+    cssjs
+</button>
+
+</body>
+
+<script>
+    function hiddenWithCss() {
+        const block = document.getElementById('block');
+        block.style.display = block.style.display !== 'none' ? 'none' : 'block'
+    }
+
+    document.getElementById('js').addEventListener('click', function () {
+        const block = document.getElementById('block');
+
+        if (block) {
+            block.remove()
+        } else {
+            const block = document.createElement('div');
+            block.classList.add('block');
+            block.id = 'block'
+
+            document.getElementById('app').appendChild(block);
+        }
+
+    })
+
+    document.getElementById('cssjs').onclick = function () {
+        const block = document.getElementById('block');
+
+        if (block.className.split(' ').includes('hidden')) {
+            block.classList.remove('hidden');
+        } else {
+            block.classList.add('hidden');
+        }
+    };
+</script>
+
+
+</html>
